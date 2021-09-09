@@ -1,9 +1,11 @@
+import { Heading } from "@chakra-ui/react";
+
 const Index = () => {
   return (
     <div className="">
-      <h1 className="">Index.</h1>
+      <Heading>Index</Heading>
     </div>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
