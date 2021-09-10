@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import fs from "fs";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
@@ -8,12 +9,12 @@ const components = {};
 
 const Post = ({ source, frontMatter }) => {
   return (
-    <div className="">
+    <Layout>
       <h1 className="">{frontMatter.title}</h1>
       <main className="">
         <MDXRemote {...source} components={components} />
       </main>
-    </div>
+    </Layout>
   );
 };
 

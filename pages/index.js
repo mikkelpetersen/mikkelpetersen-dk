@@ -1,10 +1,11 @@
 import { Heading } from "@chakra-ui/react";
+import Layout from "@/components/Layout";
 
 const Index = () => {
   return (
-    <div className="">
+    <Layout>
       <Heading>Index</Heading>
-    </div>
+    </Layout>
   );
 };
 
