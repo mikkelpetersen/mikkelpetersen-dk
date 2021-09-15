@@ -26,44 +26,8 @@
 }
 
 .logo:hover::before {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   opacity: 1;
   transition: all 250ms;
-}
-
-/* Outter Circle  */
-
-.logo::after {
-  content: "";
-  display: inline-block;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  height: 40px;
-  width: 40px;
-  opacity: 0;
-  border-width: thin;
-  border: 1px #3182ce;
-  border-style: dashed;
-  border-radius: 50%;
-  transition: all 250ms;
-}
-
-.logo:hover::after {
-  height: 80px;
-  width: 80px;
-  opacity: 1;
-  transition: 250ms;
-  animation: spin 10s infinite linear;
-}
-
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
 }
