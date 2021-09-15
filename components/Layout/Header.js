@@ -55,7 +55,7 @@ const Header = () => {
             </NavLink>
           ))}
           <Button
-            href="/contact"
+            href="mailto:hej@mikkelpetersen.dk"
             as="a"
             leftIcon={<FaEnvelope />}
             colorScheme="blue"

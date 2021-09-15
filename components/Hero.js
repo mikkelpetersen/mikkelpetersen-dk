@@ -33,7 +33,7 @@ const Hero = () => {
           </Text>
           <ButtonGroup spacing={4}>
             <Button
-              href="/contact"
+              href="mailto:hej@mikkelpetersen.dk"
               as="a"
               leftIcon={<FaEnvelope />}
               colorScheme="blue"
