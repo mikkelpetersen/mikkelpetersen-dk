@@ -24,9 +24,11 @@ const Footer = () => {
         </Box>
         <ButtonGroup variant="ghost">
           <IconButton
-            as="a"
-            href="#"
+            as={Link}
             aria-label="LinkedIn"
+            rel="noopener"
+            href="https://www.linkedin.com/in/mikkelpe/"
+            isExternal
             icon={<FaLinkedin fontSize="20px" />}
           />
         </ButtonGroup>
@@ -40,7 +42,7 @@ const Footer = () => {
           as={Link}
           aria-label="GitHub"
           rel="noopener"
-          href="#"
+          href="https://github.com/mikkelpetersen/mikkelpetersen-dk"
           isExternal
           icon={<FaGithub fontSize="20px" />}
         />

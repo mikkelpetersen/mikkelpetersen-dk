@@ -17,6 +17,7 @@ import {
   TagLabel,
   Text,
 } from "@chakra-ui/react";
+import { NextSeo as SEO } from "next-seo";
 
 const Paragraph = ({ children }) => {
   return (
@@ -40,34 +41,37 @@ const components = {
 
 const Post = ({ post, data }) => {
   return (
-    <Layout>
-      <Box as="main">
-        <SlideFade in={true} offsetY={50}>
-          <Heading
-            as="h1"
-            textColor="blue.900"
-            fontSize={{ base: "3xl", md: "5xl" }}
-          >
-            {data.title}
-          </Heading>
-          <HStack spacing={4} my={4}>
-            {data.tags.map((tag) => (
-              <Tag size="lg" key={tag} variant="outline" colorScheme="blue">
-                <TagLabel>{tag}</TagLabel>
-              </Tag>
-            ))}
-          </HStack>
-          <Text textColor="gray.400" fontSize="sm" lineHeight="taller">
-            {data.date}
-          </Text>
-        </SlideFade>
-        <SlideFade in={true} offsetY={50} delay={0.2}>
-          <article className="">
-            <MDXRemote {...post} components={components} />
-          </article>
-        </SlideFade>
-      </Box>
-    </Layout>
+    <>
+      <SEO title={data.title} description={data.description} />
+      <Layout>
+        <Box as="main">
+          <SlideFade in={true} offsetY={50}>
+            <Heading
+              as="h1"
+              textColor="blue.900"
+              fontSize={{ base: "3xl", md: "5xl" }}
+            >
+              {data.title}
+            </Heading>
+            <HStack spacing={4} my={4}>
+              {data.tags.map((tag) => (
+                <Tag size="lg" key={tag} variant="outline" colorScheme="blue">
+                  <TagLabel>{tag}</TagLabel>
+                </Tag>
+              ))}
+            </HStack>
+            <Text textColor="gray.400" fontSize="sm" lineHeight="taller">
+              {data.date}
+            </Text>
+          </SlideFade>
+          <SlideFade in={true} offsetY={50} delay={0.2}>
+            <article className="">
+              <MDXRemote {...post} components={components} />
+            </article>
+          </SlideFade>
+        </Box>
+      </Layout>
+    </>
   );
 };
 

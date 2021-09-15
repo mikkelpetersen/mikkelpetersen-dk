@@ -75,7 +75,7 @@ const Header = () => {
         />
       </Flex>
       {isOpen ? (
-        <Box my={2}>
+        <Box mb={8}>
           <Stack as={"nav"} spacing={4}>
             {Links.map((link) => (
               <NavLink

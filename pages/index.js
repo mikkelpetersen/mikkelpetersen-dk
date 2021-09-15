@@ -10,10 +10,7 @@ import path from "path";
 const Index = ({ posts }) => {
   return (
     <>
-      <SEO
-        title="Home"
-        description="Mikkel Petersen is an innovative UX Designer and Front-End Developer passionate about creating beautiful and user friendly experiences."
-      />
+      <SEO title="UX Designer and Front-End Developer" />
       <Layout>
         <Hero />
         <Divider my={{ base: 10, md: 20 }} />
