@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { Box, Stack, Heading, SlideFade, Text } from "@chakra-ui/react";
+import { Box, Heading, SlideFade, Stack, Text } from "@chakra-ui/react";
 import { NextSeo as SEO } from "next-seo";
 
 const Index = () => {

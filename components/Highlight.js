@@ -1,13 +1,4 @@
-import {
-  Box,
-  SlideFade,
-  Heading,
-  VStack,
-  LinkBox,
-  Tag,
-  TagLabel,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 
 const Highlight = ({ title, children }) => {
   return (

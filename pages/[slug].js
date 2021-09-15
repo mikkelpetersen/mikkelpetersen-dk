@@ -1,23 +1,22 @@
-import Layout from "@/components/Layout";
 import Highlight from "@/components/Highlight";
-import fs from "fs";
-import matter from "gray-matter";
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
-import path from "path";
-import Image from "next/image";
-import Link from "next/link";
+import Layout from "@/components/Layout";
 import {
   Box,
-  SlideFade,
   Heading,
   HStack,
-  LinkBox,
+  SlideFade,
   Tag,
   TagLabel,
   Text,
 } from "@chakra-ui/react";
+import fs from "fs";
+import matter from "gray-matter";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import { NextSeo as SEO } from "next-seo";
+import Image from "next/image";
+import Link from "next/link";
+import path from "path";
 
 const Paragraph = ({ children }) => {
   return (
