@@ -1,19 +1,72 @@
 import Layout from "@/components/Layout";
+import Highlight from "@/components/Highlight";
 import fs from "fs";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Box,
+  SlideFade,
+  Heading,
+  HStack,
+  LinkBox,
+  Tag,
+  TagLabel,
+  Text,
+} from "@chakra-ui/react";
 
-const components = {};
+const Paragraph = ({ children }) => {
+  return (
+    <Text
+      textColor="gray.600"
+      fontSize={{ base: "md", md: "xl" }}
+      lineHeight="taller"
+      my={{ base: 4, md: 8 }}
+    >
+      {children}
+    </Text>
+  );
+};
 
-const Post = ({ source, frontMatter }) => {
+const components = {
+  p: Paragraph,
+  Highlight,
+  Image,
+  Link,
+};
+
+const Post = ({ post, data }) => {
   return (
     <Layout>
-      <h1 className="">{frontMatter.title}</h1>
-      <main className="">
-        <MDXRemote {...source} components={components} />
-      </main>
+      <Box as="main">
+        <SlideFade in={true} offsetY={50}>
+          <Heading
+            as="h1"
+            textColor="blue.900"
+            fontSize={{ base: "3xl", md: "5xl" }}
+          >
+            {data.title}
+          </Heading>
+          <HStack spacing={4} my={4}>
+            {data.tags.map((tag) => (
+              <Tag size="lg" key={tag} variant="outline" colorScheme="blue">
+                <TagLabel>{tag}</TagLabel>
+              </Tag>
+            ))}
+          </HStack>
+          <Text textColor="gray.400" fontSize="sm" lineHeight="taller">
+            {data.date}
+          </Text>
+        </SlideFade>
+        <SlideFade in={true} offsetY={50} delay={0.2}>
+          <article className="">
+            <MDXRemote {...post} components={components} />
+          </article>
+        </SlideFade>
+      </Box>
     </Layout>
   );
 };
@@ -39,8 +92,8 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      source: mdxSource,
-      frontMatter: data,
+      post: mdxSource,
+      data,
     },
   };
 };

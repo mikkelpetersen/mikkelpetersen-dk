@@ -1,14 +1,16 @@
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Button,
   Flex,
-  Stack,
   HStack,
-  useDisclosure,
-  Text,
   IconButton,
+  Stack,
+  Text,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
+import { FaEnvelope } from "react-icons/fa";
 import NavLink from "./NavLink";
 
 const Links = [
@@ -17,7 +19,7 @@ const Links = [
     route: "/",
   },
   {
-    name: "About",
+    name: "About Me",
     route: "/about",
   },
 ];
@@ -32,10 +34,10 @@ const Header = () => {
         as="header"
         alignItems="center"
         justifyContent="space-between"
-        py={5}
+        py={8}
       >
         <Box>
-          <Text fontSize="sm">Mikkel Petersen</Text>
+          <Text fontSize="md">Mikkel Petersen</Text>
         </Box>
         <HStack as="nav" display={{ base: "none", md: "flex" }} spacing={4}>
           {Links.map((link) => (
@@ -43,30 +45,48 @@ const Header = () => {
               href={link.route}
               key={link.name}
               currentPath={router.asPath}
-              p={4}
+              letterSpacing="wide"
+              fontWeight="medium"
+              rounded="lg"
+              py={3}
+              px={4}
             >
               {link.name}
             </NavLink>
           ))}
+          <Button
+            href="/contact"
+            as="a"
+            leftIcon={<FaEnvelope />}
+            colorScheme="blue"
+            rounded="lg"
+            p={6}
+          >
+            Contact
+          </Button>
         </HStack>
         <IconButton
           size={"md"}
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={isOpen ? "Close Menu" : "Open Menu"}
+          aria-label={isOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
           onClick={isOpen ? onClose : onOpen}
           display={{ md: !isOpen ? "none" : "inherit" }}
-          rounded="none"
+          rounded="lg"
         />
       </Flex>
       {isOpen ? (
-        <Box my={4}>
+        <Box my={2}>
           <Stack as={"nav"} spacing={4}>
             {Links.map((link) => (
               <NavLink
                 href={link.route}
                 key={link.name}
                 currentPath={router.asPath}
-                p={4}
+                letterSpacing="wide"
+                fontWeight="medium"
+                rounded="lg"
+                py={3}
+                px={4}
               >
                 {link.name}
               </NavLink>
