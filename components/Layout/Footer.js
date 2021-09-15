@@ -1,3 +1,4 @@
+import Logo from "@/components/Logo";
 import {
   Box,
   ButtonGroup,
@@ -20,7 +21,7 @@ const Footer = () => {
         pb={5}
       >
         <Box>
-          <Text fontSize="md">Mikkel Petersen</Text>
+          <Logo />
         </Box>
         <ButtonGroup variant="ghost">
           <IconButton

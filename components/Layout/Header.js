@@ -1,3 +1,4 @@
+import Logo from "@/components/Logo";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
@@ -6,7 +7,6 @@ import {
   HStack,
   IconButton,
   Stack,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -37,7 +37,7 @@ const Header = () => {
         py={8}
       >
         <Box>
-          <Text fontSize="md">Mikkel Petersen</Text>
+          <Logo />
         </Box>
         <HStack as="nav" display={{ base: "none", md: "flex" }} spacing={4}>
           {Links.map((link) => (
