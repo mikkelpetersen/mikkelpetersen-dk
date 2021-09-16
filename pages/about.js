@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
-import { Box, Heading, SlideFade, Text } from "@chakra-ui/react";
+import Posts from "@/components/Posts";
+import { Box, Divider, Heading, SlideFade, Text } from "@chakra-ui/react";
 import { NextSeo as SEO } from "next-seo";
 
 const About = () => {
@@ -30,6 +31,8 @@ const About = () => {
               </Text>
             </Box>
           </SlideFade>
+          <Divider my={{ base: 10, md: 20 }} />
+          <Posts posts={posts} />
         </Box>
       </Layout>
     </>
