@@ -1,40 +1,34 @@
 import Layout from "@/components/Layout";
-import { Box, Heading, SlideFade, Stack, Text } from "@chakra-ui/react";
+import { Box, Heading, SlideFade, Text } from "@chakra-ui/react";
 import { NextSeo as SEO } from "next-seo";
 
-const Index = () => {
+const About = () => {
   return (
     <>
       <SEO title="About Me" />
       <Layout>
         <Box as="section">
           <SlideFade as="section" in={true} offsetY={50}>
-            <Stack
-              alignItems="center"
-              direction={{ base: "column", md: "row" }}
-              spacing={4}
-            >
-              <Box>
-                <Heading
-                  as="h1"
-                  textColor="blue.900"
-                  fontSize={{ base: "3xl", md: "5xl" }}
-                >
-                  My Name is Mikkel.
-                </Heading>
-                <Text
-                  textColor="gray.600"
-                  fontSize={{ base: "md", md: "xl" }}
-                  lineHeight="taller"
-                  my={8}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                  hic consectetur illum iusto sapiente nesciunt dolorem est
-                  error accusantium placeat nostrum, voluptate ducimus
-                  perferendis facilis similique mollitia natus quia laborum.
-                </Text>
-              </Box>
-            </Stack>
+            <Box>
+              <Heading
+                as="h1"
+                textColor="blue.900"
+                fontSize={{ base: "3xl", md: "5xl" }}
+              >
+                My Name is Mikkel.
+              </Heading>
+              <Text
+                textColor="gray.600"
+                fontSize={{ base: "md", md: "xl" }}
+                lineHeight="taller"
+                my={8}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis corrupti aliquid veniam dicta quo consequuntur ad illo
+                accusantium, odit magni! Officiis debitis aut eos sunt cumque
+                harum sapiente sint maxime!
+              </Text>
+            </Box>
           </SlideFade>
         </Box>
       </Layout>
@@ -42,4 +36,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default About;
