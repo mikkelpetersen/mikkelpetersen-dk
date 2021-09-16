@@ -2,8 +2,11 @@ import Layout from "@/components/Layout";
 import Posts from "@/components/Posts";
 import { Box, Divider, Heading, SlideFade, Text } from "@chakra-ui/react";
 import { NextSeo as SEO } from "next-seo";
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
 
-const About = () => {
+const About = ({ posts }) => {
   return (
     <>
       <SEO title="About Me" />
@@ -40,3 +43,23 @@ const About = () => {
 };
 
 export default About;
+
+export const getStaticProps = async () => {
+  const posts = fs
+    .readdirSync(path.join(process.cwd(), "posts"))
+    .filter((path) => /\.mdx?$/.test(path))
+    .map((filePath) => {
+      const source = fs.readFileSync(
+        path.join(path.join(process.cwd(), "posts"), filePath)
+      );
+      const { content, data } = matter(source);
+
+      return {
+        content,
+        data,
+        filePath,
+      };
+    });
+
+  return { props: { posts } };
+};
