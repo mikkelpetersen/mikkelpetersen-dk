@@ -67,8 +67,8 @@ const Stack = () => {
           lineHeight="taller"
           my={{ base: 4, md: 8 }}
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
-          odio at necessitatibus dicta! Blanditiis.
+          During my time as a User Experience Designer and Front-End Developer,
+          I gained experience with different tools and design methodologies.
         </Text>
         <Grid
           templateColumns={["1fr", "1fr", "repeat(2, 1fr)", "repeat(3, 1fr)"]}

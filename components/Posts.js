@@ -14,8 +14,9 @@ const Posts = ({ posts }) => {
           lineHeight="taller"
           my={{ base: 4, md: 8 }}
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus
-          odio at necessitatibus dicta! Blanditiis.
+          Over the years, I have had the honour of working with several
+          companies. Below are some of the amazing projects that I have been a
+          part of.
         </Text>
         <Grid
           templateColumns={["1fr", "1fr", "repeat(2, 1fr)", "repeat(2, 1fr)"]}
