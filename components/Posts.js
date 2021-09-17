@@ -19,7 +19,7 @@ const Posts = ({ posts }) => {
         </Text>
         <Grid
           templateColumns={["1fr", "1fr", "repeat(2, 1fr)", "repeat(2, 1fr)"]}
-          gap={10}
+          gap={4}
         >
           {posts.map(
             (post) =>
